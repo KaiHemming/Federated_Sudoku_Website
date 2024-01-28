@@ -9,7 +9,7 @@ Support puzzles
 - MineSweeper
 
 # Created By
-200022530, 200022418, 200006767, 200009744, and 210003309
+Aadarsh Sundar, Denis Chirita, Joel Sebastian, Kai Hemming, and Siqi Liu.
 
 # Software Dependencies
 # # Frontend

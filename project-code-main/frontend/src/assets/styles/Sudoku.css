@@ -1,0 +1,430 @@
+/* 200022530
+https://www.raymondcamden.com/2019/12/16/building-sudoku-in-vuejs-part-1
+*/
+.creator {
+    text-align:center;
+    margin-bottom:1%;
+}
+.creator:hover {
+    cursor:pointer;
+    color:gray;
+}
+/* https://stackoverflow.com/questions/13476267/hide-div-element-when-screen-size-is-smaller-than-a-specific-size */
+.description {
+    position:absolute;
+    float:left;
+    padding: 1%;
+    width:clamp(100px,20%,20%);
+    text-align:center;
+}
+@media only screen and (max-width:1026px) {
+    .description {
+        display:none;
+    }
+}
+
+.miracle-toggle-button {
+    justify-content: center;
+    height: 1.5rem;
+    margin-top: 1rem;
+}
+
+.miracle-toggle-button:hover {
+    cursor:pointer;
+}
+
+.pencil-on-color{
+    color: green;
+}
+
+.create-sudoku-title {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    font-size: 2.25rem;
+    justify-content: center;
+}
+
+.sudoku-title {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    font-size: 3rem;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.sudoku {
+    border: 2px solid;
+    width: 27rem;
+    height: 27rem;
+    margin-top: 0.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+}
+
+.number-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30rem;
+}
+
+.select-number-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 0.5rem;
+    border: 3px solid black;
+    background-color: white;
+}
+
+.small-grid {
+    text-align: center;
+    height: 3rem;
+    width: 3rem;
+    table-layout: fixed;
+}
+
+th {
+    background-color: pink;
+    cursor: pointer;
+    border: 1px solid;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 40px;
+}
+
+th:hover {
+    background-color: rgba(173, 216, 230, 0.582);
+    color: white;
+}
+
+.sudoku-td {
+    background-color: white;
+    border: 1px solid;
+    text-align: center;
+    height: 3rem;
+    width: 3rem;
+    table-layout: fixed;
+}
+.sudoku-td.isSelected {
+    background-color: #aadbd1 !important;
+}
+
+.sudoku-td.editible {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.sudoku-td.editible:hover {
+    background-color: rgba(173, 216, 230, 0.582);
+}
+
+.sudoku-td.sameNumber {
+    background-color: aquamarine;
+}
+
+.sudoku-td.invalid {
+    background-color:red;
+}
+
+.sudoku-td:first-child {
+    border-left: solid;
+}
+
+.sudoku-td:nth-child(3n) {
+    border-right: solid;
+}
+
+.sudoku-tr:first-child {
+    border-top: solid;
+}
+
+.sudoku-tr:nth-child(3n) td {
+    border-bottom: solid;
+}
+
+.pencil-tr {
+    border: none;
+}
+
+.pencil-td {
+    border: none !important;
+    width: 0.3rem;
+    line-height: 0.3rem;
+    color: green;
+}
+
+button {
+    margin: 40px auto;
+}
+
+.custom-alert-box {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
+
+.custom-alert-content {
+    text-align: center;
+}
+
+.custom-alert-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.custom-alert-content h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.star-rating-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#commentForm {
+    margin-top: 20px;
+}
+
+form {
+    border: 1px solid rgba(16, 46, 46, 1);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+div#commentForm {
+    display: inline-block;
+    margin-left: 24vw;
+    vertical-align: top;
+}
+
+.sudoku.shake {
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.duplicate {
+    background-color: #bbced4;
+}
+
+.invalid {
+    background-color: #fd0000 !important;
+}
+
+.stopwatch {
+    overflow:hidden;
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    width: 49%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.stopwatch span {
+    font-size: 28px;
+    font-family: monospace;
+    margin: 0 4px;
+}
+
+.timing-wrapper {
+    display: inline;
+    width:clamp(250px,20%,20%);
+    padding:1%;
+}
+
+.lbcheck {
+    margin:auto;
+    width:49%;
+    float:right;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.lbcheck:hover { 
+    background-color: #1abc9c;
+}
+
+.blur {
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px dotted black;
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 0;
+    margin-bottom: 35px;
+    margin-right: auto;
+    text-align: center;
+}
+
+.container p {
+    width: 60px;
+    height: 30px;
+    margin-top: 20px;
+    margin-right: 30px;
+}
+
+.container p:hover{
+    cursor:pointer;
+}
+
+.hint-button,
+.pencil-button,
+.download-button,
+.upload-button,
+.save-button {
+    align-self:center;
+    justify-content:center;
+    display:flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.startButton {
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 42.5%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    width:10%;
+    height: 5%;
+}
+.startButton:hover { 
+    background-color: #1abc9c;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(5px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-10px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+
+input[type="file"] {
+  display: none;
+}
+
+#fileInputContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.custom-file-upload {
+  display: flex;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.custom-file-upload:hover {
+  background-color: #3e8e41;
+}
+.puzzle{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hint-container {
+    display: inline-block;
+}
+
+.hint-text,
+.hint-button {
+display: inline-block;
+vertical-align: middle; /* aligns the icon with the text */
+}
+
+.leaderboard-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.leaderboard-overlay > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom:none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    max-height: 90%;
+    overflow: auto;
+}
+
+#content{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#puzzleArea{
+    padding-right: 100px;
+    position: relative;
+}

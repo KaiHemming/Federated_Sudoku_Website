@@ -1,0 +1,86 @@
+.commt p,
+.commt span {
+    display: inline;
+}
+#account{
+    font-size: 17px;
+    color: #32618f;
+    font-style: italic;
+}
+#account:hover {
+    cursor:pointer;
+    color:palevioletred;
+}
+#date{
+    font-size: 10px;
+    color: #3e8e41;
+    position: absolute;
+    right: 5%;
+    padding-left: 10px;
+}
+.scroll {
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width:300px;
+    height: 580px;
+    text-align: justify;
+}
+input{
+    width:200px
+
+}
+#commentForm{
+    width: 300px;
+    padding-top: 13px;
+    padding-bottom: 7px;
+    display:flex;
+}
+#sentButton{
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 2px solid #2f2929;
+}
+.c{
+    display:flex;
+    height: 700px;
+    flex-direction: column;
+}
+.form-group{
+    display: flex;
+    margin-bottom: 10px;
+}
+#commentList{
+    width:300px;
+    height: 400px;
+}
+p{
+    margin-bottom: 0;
+}
+.comment{
+    margin-bottom: 10px;
+    border-bottom: 1px dashed pink;
+}
+#nd{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 5px;
+}
+#cmt-content{
+    font-family: "Gill Sans", sans-serif;
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+#cmt-delete {
+    float:bottom;
+    text-align:end;
+    color:#32618f;
+}
+#cmt-delete:hover {
+    cursor:pointer;
+    color:palevioletred;
+}

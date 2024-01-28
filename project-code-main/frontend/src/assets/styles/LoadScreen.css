@@ -1,0 +1,23 @@
+.load-screen {
+    position: fixed;
+    filter: blur(5px);
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+.load-notification {
+    font-weight: bold;
+    position: absolute;
+    height:10%;
+    width:100%;
+    text-align:center;
+    padding: 20% 0 20%;
+}
+.load-message {
+    position: absolute;
+    height:10%;
+    width:100%;
+    text-align:center;
+    padding: 23% 0 20%;
+}

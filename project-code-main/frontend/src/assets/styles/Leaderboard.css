@@ -1,0 +1,55 @@
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  overflow: hidden;
+  max-height: 80vh;
+  padding: 10px;
+}
+
+.highlighted {
+  background-color: limegreen;
+  opacity: 0.4;
+}
+
+.lb-section-title {
+  width: 90%;
+  float: left;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 600;
+  font-size: 2.25rem;
+  justify-content: center;
+  margin-top: 15px;
+  top: 0%;
+}
+
+#username:hover {
+  cursor:pointer;
+  color:palevioletred;
+}
+
+.close-button {
+  position: absolute;
+  top: 1px;
+  left: 81%;
+  right: 33em;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close-button i {
+  font-size: 1.5rem;
+  color: #dc3545;
+}
+
+.container{
+  position: relative;
+}

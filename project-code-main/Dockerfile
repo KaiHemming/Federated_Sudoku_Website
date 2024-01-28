@@ -1,0 +1,21 @@
+FROM python:latest
+
+ENV APPPATH /opt/myflaskapp
+COPY . $APPPATH
+WORKDIR $APPPATH/backend
+
+RUN buildDeps='python-pip python-dev build-essential' \
+    && set -x \
+    && apt-get update \
+	&& apt-get install -y $buildDeps \
+ 	&& pip install --upgrade pip \
+ 	&& pip install -r requirements.txt \
+ 	&& apt-get clean \
+ 	&& rm -rf /var/lib/apt/lists/* \
+ 	&& apt-get purge -y --auto-remove $buildDeps
+
+EXPOSE 5000
+
+ENTRYPOINT ["python"]
+CMD ["src/main.py"]
+

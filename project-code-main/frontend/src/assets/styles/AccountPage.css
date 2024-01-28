@@ -1,0 +1,85 @@
+.container {
+    width:80%;
+    margin: auto;
+}
+.user-info-wrapper { 
+    margin-top: 8%;
+}
+.user-info-wrapper p {
+    font-weight:lighter;
+    color:darkslategray
+}
+.user-info-wrapper h3 {
+    font-weight: bold;
+    width:100%;
+}
+.promote-button {
+    font-size: small;
+    float:right;
+    padding:0px;
+    margin-top: 0px;
+}
+.promote-button:hover {
+    color:palevioletred;
+    cursor: pointer;
+}
+.basic-info {
+    width: fit-content;
+}
+.bio {
+    border-top: 1px solid gray;
+    padding:1%;
+    width: 100%;
+    text-align:center;
+    color: black;
+    overflow:hidden;
+}
+.edit-button {
+    float:right;
+    text-decoration:underline;
+}
+.edit-button:hover {
+    color:palevioletred;
+    cursor:pointer;
+}
+.edit-bio-textbox {
+    width: 90%;
+}
+.currentlyPlaying {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    background-color:#aadbd1;
+    border: 5px dotted #2c3e50;
+    overflow:hidden;
+}
+.currentlyPlaying h3 {
+    font-weight:bold;
+    text-align:center;
+}
+.currentlyPlaying p {
+    text-align: center;
+    color:darkslategray
+}
+.currentlyPlaying h2 {
+    margin-top:30%;
+    margin-bottom:30%;
+    text-align:center;
+    font-weight:bold;
+    font-size:17px;
+    color:darkred;
+}
+.saved-sudoku-wrapper {
+    border-top: 1px solid #2c3e50;
+    border-bottom: 1px solid #2c3e50;
+    padding:1%;
+    overflow:hidden;
+}
+.saved-sudoku-instructions {
+    float:left;
+}
+.saved-sudoku-instructions h3 {
+    text-align: center;
+    font-weight: bold;
+}
